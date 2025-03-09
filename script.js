@@ -9,9 +9,11 @@ function convertToRoman(num) {
       6:['I', 1]
     };
 
-	let result = "";
+	 let result = "";
 
-    for (let [symbol, value] of  obj) {
+    for (let i = 0; i < Object.keys(obj).length; i++) {
+        let [symbol, value] = obj[i]; // Extract Roman symbol and its value
+        
         while (num >= value) {
             result += symbol;
             num -= value;
@@ -19,6 +21,7 @@ function convertToRoman(num) {
     }
 
     return result;
+	
 
   //your code here
 
